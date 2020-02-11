@@ -23,4 +23,9 @@ public class GameManager : MonoBehaviour
     {
         return camera;
     }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+    }
 }

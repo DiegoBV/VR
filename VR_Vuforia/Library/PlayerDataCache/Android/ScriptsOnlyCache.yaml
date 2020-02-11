@@ -1,10 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Bullet
+    - DamagePlayer
     - FingerMovement
     - FollowPlayer
     - GameManager
     - GameObjectPool
+    - Health
+    - SetActiveInMobile
+    - SetAsChildMobile
+    - ShootNearestestEnemy
     - Spawner
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -59,31 +65,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 10104}
+      Script: {instanceID: 9954}
     - Class: 114
-      Script: {instanceID: 10118}
+      Script: {instanceID: 10106}
     - Class: 114
-      Script: {instanceID: 10188}
+      Script: {instanceID: 10120}
     - Class: 114
-      Script: {instanceID: 10292}
+      Script: {instanceID: 10190}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 10294}
     - Class: 114
-      Script: {instanceID: 10418}
+      Script: {instanceID: 10398}
     - Class: 114
-      Script: {instanceID: 10426}
+      Script: {instanceID: 10420}
     - Class: 114
       Script: {instanceID: 10428}
     - Class: 114
-      Script: {instanceID: 10638}
+      Script: {instanceID: 10430}
     - Class: 114
-      Script: {instanceID: 11018}
+      Script: {instanceID: 10640}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 11020}
     - Class: 114
-      Script: {instanceID: 11704}
+      Script: {instanceID: 11156}
     - Class: 114
-      Script: {instanceID: 15740}
+      Script: {instanceID: 11708}
+    - Class: 114
+      Script: {instanceID: 13110}
+    - Class: 114
+      Script: {instanceID: 13118}
+    - Class: 114
+      Script: {instanceID: 16310}
+    - Class: 114
+      Script: {instanceID: 17164}
+    - Class: 114
+      Script: {instanceID: 17344}
+    - Class: 114
+      Script: {instanceID: 19546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -185,6 +203,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 923123b838380e3f94fa92e8be28fb4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -823,7 +847,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 7a808be41835ff4fa0722510a2096554
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FollowPlayer
@@ -1357,10 +1381,40 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 923123b838380e3f94fa92e8be28fb4e
+      Hash: 1f1902b4db20cfaaabc265e92bb96cf2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
+    className: SetActiveInMobile
+  - hash:
+      serializedVersion: 2
+      Hash: 636db320a9c0d2a997e7a16f3abb2046
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetAsChildMobile
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DamagePlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 0ec5b9ce3e487e8a8cc55353e4659cb8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShootNearestestEnemy
+  - hash:
+      serializedVersion: 2
+      Hash: 8b493c6a74b7b2f8199eb7b7137d206d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: f1ec81d7c6f800a4abf1ead2e44da010
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Health
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

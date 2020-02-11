@@ -28,13 +28,13 @@ public class FingerMovement : MonoBehaviour
     private void FollowInput()
     {
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
-        Vector3 destPosition = GameManager.instance.GetCamera().ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, transform.position.z));
+        transform.position = GameManager.instance.GetCamera().ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, transform.position.z));
 #else
         Vector3 destPosition = GameManager.instance.GetCamera().ScreenToWorldPoint(Input.mousePosition);
-#endif
         Vector3 nPosition = SteeringBehaviours.Follow(transform.position, destPosition, speed);
 
-        if(Vector3.Distance(nPosition, destPosition) > offset)
+        if (Vector3.Distance(nPosition, destPosition) > offset)
             gameObject.transform.position = nPosition;
+#endif
     }
 }

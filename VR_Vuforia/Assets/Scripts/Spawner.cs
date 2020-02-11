@@ -11,16 +11,30 @@ public class Spawner : MonoBehaviour
     public GameObject[] spawnPoints;
 
     private float currentTime = 0;
+    private int spawns = 0;
+    private float _timeToSpawn;
+
+    private void Start()
+    {
+        _timeToSpawn = timeToSpawn;
+    }
 
     private void Update()
     {
         currentTime += Time.deltaTime;
-        if(currentTime >= timeToSpawn)
+        if(currentTime >= _timeToSpawn)
         {
             // spawn
             GameObject go = gameObjectPool.GetInactiveGameObject();
             resetGameObject(go);
             currentTime = 0;
+            spawns++;
+            if(spawns % 20 == 0)
+            {
+                // diff
+                if(_timeToSpawn >= 0.5f)
+                    _timeToSpawn -= 0.5f;
+            }
         }
     }
 

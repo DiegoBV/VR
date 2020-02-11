@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 469818733386051577}
   - component: {fileID: 469818733386051578}
+  - component: {fileID: -8054873755761128898}
   - component: {fileID: 469818733386051579}
   - component: {fileID: 469818733386051580}
+  - component: {fileID: 2670922045685345049}
   - component: {fileID: 4909856267198942972}
   m_Layer: 0
   m_Name: Monkey
@@ -42,19 +44,32 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469818733386051581}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8054873755761128898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469818733386051581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e17ed4e5f6061408c2049617070105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 7
 --- !u!114 &469818733386051579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968753ba0cf99e42bb20e2cb3b46c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  minSpeed: 1
+  maxSpeed: 8
 --- !u!212 &469818733386051580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,6 +133,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2670922045685345049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469818733386051581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316e756df83e85c4682841052d644b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &4909856267198942972
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +155,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
