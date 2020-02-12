@@ -5,13 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
-    public Camera camera;
     public GameObject player;
+
+    private Camera camera;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        camera = Camera.main;
     }
 
     public GameObject GetPlayer()

@@ -26,14 +26,17 @@ public class Spawner : MonoBehaviour
         {
             // spawn
             GameObject go = gameObjectPool.GetInactiveGameObject();
-            resetGameObject(go);
-            currentTime = 0;
-            spawns++;
-            if(spawns % 20 == 0)
+            if (go != null)
             {
-                // diff
-                if(_timeToSpawn >= 0.5f)
-                    _timeToSpawn -= 0.5f;
+                resetGameObject(go);
+                currentTime = 0;
+                spawns++;
+                if (spawns % 20 == 0)
+                {
+                    // diff
+                    if (_timeToSpawn >= 0.5f)
+                        _timeToSpawn -= 0.5f;
+                }
             }
         }
     }
