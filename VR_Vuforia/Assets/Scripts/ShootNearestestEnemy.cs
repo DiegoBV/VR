@@ -15,13 +15,17 @@ public class ShootNearestestEnemy : MonoBehaviour
     void Update()
     {
         RaycastHit2D[] collisions = Physics2D.CircleCastAll(transform.position, radius, new Vector2(0.0f, 0.0f));
+        Vector3 aux = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
 
         foreach(RaycastHit2D col in collisions)
         {
             if (col.collider.gameObject.GetComponent<FollowPlayer>())
             {
-                currentEnemy = col.collider.gameObject;
-                break;
+                if (Vector3.Distance(transform.position, col.transform.position) < Vector3.Distance(transform.position, aux))
+                {
+                    aux = col.transform.position;
+                    currentEnemy = col.collider.gameObject;
+                }
             }
         }
 
