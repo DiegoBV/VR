@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
+    public string gameOverScene;
+    public GameObject restartButton;
 
     private Camera camera;
+    private float startingTime;
+    private float playingTime;
+    private bool gameStopped = false;
+
 
     private void Awake()
     {
@@ -17,6 +24,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         camera = Camera.main;
+        startingTime = Time.time;
+        restartButton.SetActive(false);
+    }
+
+    private void Update()
+    {
+        playingTime = Time.time - startingTime;   
     }
 
     public GameObject GetPlayer()
@@ -31,6 +45,29 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        player.SetActive(false);
+        EventManager.GetInstance().TriggerEvent("gameOver");
+        gameStopped = true;
+        restartButton.SetActive(true);
+    }
+
+    public bool IsGameStopped()
+    {
+        return gameStopped;
+    }
+
+    public float GetPlayingTime()
+    {
+        return playingTime;
+    }
+
+    public void Restart()
+    {
+        restartButton.SetActive(false);
+        gameStopped = false;
+        player.SetActive(true);
+        EventManager.GetInstance().TriggerEvent("restart");
+        startingTime = Time.time;
+        playingTime = 0;
     }
 }

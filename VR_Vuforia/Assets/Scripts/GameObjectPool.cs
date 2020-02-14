@@ -46,6 +46,14 @@ public class GameObjectPool : MonoBehaviour
         return null;
     }
 
+    public void DeactivateEveryObject()
+    {
+        foreach (GameObject o in pool)
+        {
+            o.SetActive(false);
+        }
+    }
+
     private GameObject AddGameObjectToPool()
     {
         GameObject obj = Instantiate(objectToPool, transform);
@@ -53,4 +61,5 @@ public class GameObjectPool : MonoBehaviour
         pool.Add(obj);
         return obj;
     }
+
 }

@@ -41,10 +41,33 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        EventManager.GetInstance().AddListener("gameOver", GameOver);
+        EventManager.GetInstance().AddListener("restart", Restart);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.GetInstance().RemoveListener("gameOver", GameOver);
+        EventManager.GetInstance().RemoveListener("restart", Restart);
+    }
+
     private void resetGameObject(GameObject go)
     {
         Vector3 spawnPos = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
         go.transform.position = new Vector3(spawnPos.x, spawnPos.y, spawnPos.z);
         go.SetActive(true);
+    }
+
+    private void GameOver()
+    {
+        gameObjectPool.DeactivateEveryObject();
+        gameObject.SetActive(false);
+    }
+
+    private void Restart()
+    {
+        gameObject.SetActive(true);
     }
 }
