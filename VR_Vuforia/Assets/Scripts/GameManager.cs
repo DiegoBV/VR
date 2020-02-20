@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [Tooltip("Player of the game")]
     public GameObject player;
-    [Tooltip("Restart game button")]
+    public GameObjectPool bananaSystemPool;
     public GameObject restartButton;
-    [Tooltip("Banan particle system pool")]
-    public GameObjectPool bananaSystem;
 
     private Camera camera;
     private float startingTime;
@@ -74,8 +71,8 @@ public class GameManager : MonoBehaviour
         playingTime = 0;
     }
 
-    public GameObjectPool GetBananaSystem()
+    public GameObjectPool GetBananaSystemPool()
     {
-        return bananaSystem;
+        return bananaSystemPool;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SetAsChildMobile : MonoBehaviour
 {
-    [Tooltip("GameObjects that are gonna be set as childs of this gameObject")]
     public GameObject[] childs;
 
     // Start is called before the first frame update

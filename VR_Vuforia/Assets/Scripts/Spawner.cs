@@ -8,7 +8,6 @@ public class Spawner : MonoBehaviour
     public GameObjectPool gameObjectPool;
     [Tooltip("Waiting time to spawn a gameObject")]
     public float timeToSpawn;
-    [Tooltip("Where this should spawn")]
     public GameObject[] spawnPoints;
 
     private float currentTime = 0;

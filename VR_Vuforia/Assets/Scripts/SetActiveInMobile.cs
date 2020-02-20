@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SetActiveInMobile : MonoBehaviour
 {
-    [Tooltip("Is this active in mobile?")]
     public bool activeInMobile;
 
     void Awake()
