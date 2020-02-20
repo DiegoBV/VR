@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [Tooltip("Bullet speed")]
     public float speed;
+    [Tooltip("Time to be deactivated in seconds")]
     public float timeToDie = 4.0f;
 
     private Rigidbody2D rigidBody;

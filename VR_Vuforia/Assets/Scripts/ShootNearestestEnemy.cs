@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ShootNearestestEnemy : MonoBehaviour
 {
+    [Tooltip("Radius check")]
     public float radius = 3.0f;
+    [Tooltip("Bullets pool")]
     public GameObjectPool bulletPool;
+    [Tooltip("Time interval between bullets")]
     public float timeToShoot = 0.2f;
 
     private float currentTime = 0;

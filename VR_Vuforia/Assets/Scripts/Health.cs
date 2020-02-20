@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Tooltip("Starting health")]
     public uint healthPoints = 10;
 
     private uint currentHealthPoints;
@@ -14,6 +15,9 @@ public class Health : MonoBehaviour
         if(currentHealthPoints <= 0)
         {
             gameObject.SetActive(false);
+            GameObject psystem = GameManager.instance.GetBananaSystem().GetInactiveGameObject();
+            psystem.transform.position = gameObject.transform.position;
+            psystem.SetActive(true);
         }
     }
 
