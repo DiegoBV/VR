@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
     public GameObjectPool bananaSystemPool;
     public GameObject restartButton;
-
-    private Camera camera;
+    public AudioClip playerDeath, monkeyDeath;
+    public enum Sounds { PlayerDeath, MonkeyDeath};
+    
+    private Camera _camera;
     private float startingTime;
     private float playingTime;
     private bool gameStopped = false;
-
+    private AudioSource audioSrc;
 
     private void Awake()
     {
@@ -23,9 +26,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        camera = Camera.main;
+        _camera = Camera.main;
         startingTime = Time.time;
         restartButton.SetActive(false);
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -40,11 +44,12 @@ public class GameManager : MonoBehaviour
 
     public Camera GetCamera()
     {
-        return camera;
+        return _camera;
     }
 
     public void GameOver()
     {
+        PlaySound(Sounds.PlayerDeath);
         player.SetActive(false);
         EventManager.GetInstance().TriggerEvent("gameOver");
         gameStopped = true;
@@ -74,5 +79,20 @@ public class GameManager : MonoBehaviour
     public GameObjectPool GetBananaSystemPool()
     {
         return bananaSystemPool;
+    }
+
+    public void PlaySound(Sounds sound)
+    {
+        switch (sound)
+        {
+            case Sounds.PlayerDeath:
+                audioSrc.PlayOneShot(playerDeath);
+                break;
+            case Sounds.MonkeyDeath:
+                audioSrc.PlayOneShot(monkeyDeath);
+                break;
+            default:
+                break;
+        }
     }
 }

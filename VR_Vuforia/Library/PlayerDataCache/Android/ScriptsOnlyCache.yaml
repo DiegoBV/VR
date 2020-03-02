@@ -10,7 +10,7 @@ ScriptsOnlyBuild:
     - FollowPlayer
     - GameManager
     - GameObjectPool
-    - Health
+    - MonkeyHealth
     - Rotate
     - SetActiveInMobile
     - SetAsChildMobile
@@ -68,6 +68,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -167,6 +171,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -307,7 +315,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 2cf5af0abaea18b7622fc6b1403d3dd3
+      Hash: 7703ece109e89ddec778eb2f83ef9403
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -412,7 +420,7 @@ ScriptsOnlyBuild:
       Hash: f1ec81d7c6f800a4abf1ead2e44da010
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Health
+    className: MonkeyHealth
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c

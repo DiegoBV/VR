@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Health h = collision.gameObject.GetComponent<Health>();
+        MonkeyHealth h = collision.gameObject.GetComponent<MonkeyHealth>();
         if(h != null)
         {
             h.ReduceHealth();
